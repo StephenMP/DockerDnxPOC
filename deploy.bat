@@ -5,5 +5,8 @@
 @echo Setting %TARGET%-%COLOR% to tag %VERSION%
 @tutum service set --image tutum.co/scenpoc/dnx-poc:%VERSION% --redeploy --sync %TARGET%-%COLOR%
 
+@echo Resting for a minute
+@sleep 60
+
 @echo Linking load balancer to %TARGET%-%COLOR%
 @tutum service set --link %TARGET%-%COLOR%:%TARGET%-%COLOR% %TARGET%-lb
